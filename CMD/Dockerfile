@@ -1,3 +1,3 @@
 FROM almalinux:9
-RUN dnf install ngnix -y
+RUN dnf install mysql -y
 CMD ["ngnix","-g","daemon off"]
