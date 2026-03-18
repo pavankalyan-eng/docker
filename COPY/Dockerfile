@@ -1,4 +1,5 @@
 FROM almalinux:9
-RUN dnf install httpd -y
-COPY index.html /var/www/html/index.html
-CMD ["httpd", "-g", "daemon off"]
+RUN dnf install nginx -y
+RUN rm -rf /usr/share/nginx/html/index.html
+COPY index.html /usr/share/nginx/html/index.html
+CMD ["nginx", "-g", "daemon off;"]
